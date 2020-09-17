@@ -4,11 +4,24 @@ class HanoiGame {
   }
 
   isValidMove(startTowerIdx, endTowerIdx) {
-    if (startTowerIdx === 0) return true
-    if (startTowerIdx < endTowerIdx) return true
+    let startTower = this.towers[startTowerIdx];
+    let endTower = this.towers[endTowerIdx]
+
+    if (startTowerIdx === endTowerIdx) return false;
+    if (startTowerIdx > 2) return false;
+    if (endTowerIdx > 2) return false;
+    if (startTower.length === 0) return false;
+    if (!startTower) return false;
+    if (startTower[startTower.length - 1] > endTower[endTower.length - 1]) return false;
+
+
+    if (endTower.length === 0) return true;
+    if (startTower[startTower.length - 1] < endTower[endTower.length - 1]) return true;
   }
 
-  move(startTowerIdx, endTowerIdx) {}
+  move(startTowerIdx, endTowerIdx) {
+    isValidMove();
+  }
 
   isWon() {}
 
