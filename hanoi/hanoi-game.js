@@ -1,7 +1,12 @@
 class HanoiGame {
-  constructor() {}
+  constructor(towers) {
+    this.towers = towers || [[3, 2, 1], [], []]
+  }
 
-  isValidMove(startTowerIdx, endTowerIdx) {}
+  isValidMove(startTowerIdx, endTowerIdx) {
+    if (startTowerIdx === 0) return true
+    if (startTowerIdx < endTowerIdx) return true
+  }
 
   move(startTowerIdx, endTowerIdx) {}
 

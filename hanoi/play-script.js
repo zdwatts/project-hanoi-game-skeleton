@@ -5,7 +5,7 @@ const reader = readline.createInterface({
   output: process.stdout
 });
 
-let game = new HanoiGame();
+let game = new HanoiGame(towers);
 game.run(reader, completion);
 
 function completion() {
